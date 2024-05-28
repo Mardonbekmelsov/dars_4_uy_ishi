@@ -4,8 +4,8 @@ import 'package:dars_4_uy_ishi/views/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class EmployeeEditScreen extends StatefulWidget {
-  Employee employee;
-  EmployeeEditScreen({required this.employee});
+  final Employee employee;
+  const EmployeeEditScreen({super.key, required this.employee});
 
   @override
   State<EmployeeEditScreen> createState() => _EmployeeEditScreenState();
@@ -29,15 +29,15 @@ class _EmployeeEditScreenState extends State<EmployeeEditScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("miss the field you don't want to change"),
-            SizedBox(
+            const Text("miss the field you don't want to change"),
+            const SizedBox(
               height: 40,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter new name",
                   suffixIcon: Icon(
                     Icons.person,
@@ -45,14 +45,14 @@ class _EmployeeEditScreenState extends State<EmployeeEditScreen> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: ageController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter new age",
                   suffixIcon: Icon(
                     Icons.numbers,
@@ -60,14 +60,14 @@ class _EmployeeEditScreenState extends State<EmployeeEditScreen> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: positionController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter new position",
                   suffixIcon: Icon(
                     Icons.people,
@@ -75,14 +75,14 @@ class _EmployeeEditScreenState extends State<EmployeeEditScreen> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: skillsController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter new skills",
                   suffixIcon: Icon(
                     Icons.person,
@@ -90,7 +90,7 @@ class _EmployeeEditScreenState extends State<EmployeeEditScreen> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             ElevatedButton(
@@ -112,9 +112,9 @@ class _EmployeeEditScreenState extends State<EmployeeEditScreen> {
                             ? widget.employee.skills
                             : skillsController.text.split(",").toList()));
                 Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                    MaterialPageRoute(builder: (context) => const HomeScreen()));
               },
-              child: Text(
+              child: const Text(
                 "Save",
                 style: TextStyle(
                   color: Colors.white,

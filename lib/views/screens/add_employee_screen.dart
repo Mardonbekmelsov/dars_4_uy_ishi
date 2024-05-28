@@ -3,16 +3,18 @@ import 'package:dars_4_uy_ishi/models/employee.dart';
 import 'package:dars_4_uy_ishi/views/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
-class addEmployeeScreen extends StatelessWidget {
+class AddEmployeeScreen extends StatelessWidget {
   final CompanyController companyController = CompanyController();
 
-  TextEditingController nameController = TextEditingController();
+  final nameController = TextEditingController();
 
-  TextEditingController ageController = TextEditingController();
+  final TextEditingController ageController = TextEditingController();
 
-  TextEditingController positionController = TextEditingController();
+  final TextEditingController positionController = TextEditingController();
 
-  TextEditingController skillsController = TextEditingController();
+  final TextEditingController skillsController = TextEditingController();
+
+  AddEmployeeScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,7 @@ class addEmployeeScreen extends StatelessWidget {
               width: 250,
               child: TextField(
                 controller: nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter name",
                   suffixIcon: Icon(
                     Icons.person,
@@ -32,14 +34,14 @@ class addEmployeeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: ageController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter age",
                   suffixIcon: Icon(
                     Icons.numbers,
@@ -47,14 +49,14 @@ class addEmployeeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: positionController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter position",
                   suffixIcon: Icon(
                     Icons.people,
@@ -62,14 +64,14 @@ class addEmployeeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: skillsController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter skills by comma",
                   suffixIcon: Icon(
                     Icons.person,
@@ -77,7 +79,7 @@ class addEmployeeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             ElevatedButton(
@@ -91,9 +93,9 @@ class addEmployeeScreen extends StatelessWidget {
                     position: positionController.text,
                     skills: skillsController.text.split(",").toList()));
                 Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                    MaterialPageRoute(builder: (context) => const HomeScreen()));
               },
-              child: Text(
+              child: const Text(
                 "Add Employee",
                 style: TextStyle(
                   color: Colors.white,

@@ -46,7 +46,6 @@ class CompanyController {
   }
 
   void addEmployee(Employee employee) {
-    print("dskuscfbhul");
     companyApi["employees"].add(employee.toJson());
     company.employees.add(employee);
   }
@@ -54,17 +53,12 @@ class CompanyController {
   void addProduct(Product product) {
     companyApi["products"].add(product.toJson());
     company.products.add(product);
-    print("added");
-    print(company.products);
   }
 
   void editEmployee(Employee employee, Employee newEmployee) {
     for (var i = 0; i < companyApi["employees"].length; i++) {
-      print(companyApi["employees"][i]);
-      print(employee.toJson());
       if (companyApi["employees"][i]["name"] == employee.name) {
         companyApi["employees"][i] = newEmployee.toJson();
-        print("entered");
       }
     }
   }

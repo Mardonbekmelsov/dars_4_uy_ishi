@@ -4,14 +4,12 @@ import 'package:dars_4_uy_ishi/views/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class EditProduct extends StatelessWidget {
-  Product product;
-  EditProduct({required this.product});
+  final Product product;
+  EditProduct({super.key, required this.product});
 
-  TextEditingController nameController = TextEditingController();
-
-  TextEditingController priceController = TextEditingController();
-
-  TextEditingController stockController = TextEditingController();
+  final TextEditingController priceController = TextEditingController();
+  final TextEditingController stockController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
 
   final CompanyController companyController = CompanyController();
   @override
@@ -25,7 +23,7 @@ class EditProduct extends StatelessWidget {
               width: 250,
               child: TextField(
                 controller: nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter new product name",
                   suffixIcon: Icon(
                     Icons.production_quantity_limits_outlined,
@@ -33,14 +31,14 @@ class EditProduct extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: priceController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter new price",
                   suffixIcon: Icon(
                     Icons.numbers,
@@ -48,14 +46,14 @@ class EditProduct extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: stockController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "in stock? yes/no",
                   suffixIcon: Icon(
                     Icons.stacked_bar_chart_rounded,
@@ -63,7 +61,7 @@ class EditProduct extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             ElevatedButton(
@@ -80,9 +78,9 @@ class EditProduct extends StatelessWidget {
                         price: double.parse(priceController.text),
                         inStock: stockController.text == "yes"));
                 Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()));
+                    MaterialPageRoute(builder: (context) => const HomeScreen()));
               },
-              child: Text(
+              child: const Text(
                 "Edit Product",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,

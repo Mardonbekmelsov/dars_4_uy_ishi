@@ -38,14 +38,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               companyController.employees.isEmpty
-                  ? Row(
+                  ? const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        const Text("This company haven't got employees"),
+                        Text("This company haven't got employees"),
                       ],
                     )
                   : Wrap(
@@ -63,17 +63,17 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                       ],
                     ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
-              Text(
+              const Text(
                 "Products",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               companyController.products.isNotEmpty
@@ -92,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                       ],
                     )
-                  : Row(
+                  : const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("Haven't got products yet"),
@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         builder: (context) => AddProductScreen()));
               });
             },
-            child: Column(
+            child: const Column(
               children: [
                 Icon(Icons.add),
                 Text(
@@ -129,10 +129,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => addEmployeeScreen()));
+                        builder: (context) => AddEmployeeScreen()));
               });
             },
-            child: Column(
+            child: const Column(
               children: [
                 Icon(Icons.add),
                 Text(

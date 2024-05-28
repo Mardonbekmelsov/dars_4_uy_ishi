@@ -1,19 +1,17 @@
 import 'package:dars_4_uy_ishi/models/employee.dart';
-import 'package:dars_4_uy_ishi/models/product.dart';
 import 'package:dars_4_uy_ishi/views/screens/edit_employee_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 
 class EmployeeWidget extends StatelessWidget {
-  Function() delete;
-  Employee employee;
-  EmployeeWidget({required this.employee, required this.delete});
+  final Function() delete;
+  final Employee employee;
+  const EmployeeWidget({super.key, required this.employee, required this.delete});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         height: 200,
         width: 180,
         child: Column(
@@ -31,14 +29,14 @@ class EmployeeWidget extends StatelessWidget {
                             builder: (context) =>
                                 EmployeeEditScreen(employee: employee)));
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.edit,
                     color: Colors.blue,
                   ),
                 ),
                 InkWell(
                   onTap: delete,
-                  child: Icon(
+                  child: const Icon(
                     Icons.delete,
                     color: Colors.red,
                   ),
@@ -68,7 +66,7 @@ class EmployeeWidget extends StatelessWidget {
             ),
             Text(
               "skills: ${employee.skills}",
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),

@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 
 class AddProductScreen extends StatelessWidget {
   final CompanyController companyController = CompanyController();
-  TextEditingController nameController = TextEditingController();
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController priceController = TextEditingController();
+  final TextEditingController stockController = TextEditingController();
 
-  TextEditingController priceController = TextEditingController();
-
-  TextEditingController stockController = TextEditingController();
+  AddProductScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class AddProductScreen extends StatelessWidget {
               width: 250,
               child: TextField(
                 controller: nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter product name",
                   suffixIcon: Icon(
                     Icons.production_quantity_limits_outlined,
@@ -29,14 +29,14 @@ class AddProductScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: priceController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Enter price",
                   suffixIcon: Icon(
                     Icons.numbers,
@@ -44,14 +44,14 @@ class AddProductScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Container(
               width: 250,
               child: TextField(
                 controller: stockController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "in stock? yes/no",
                   suffixIcon: Icon(
                     Icons.stacked_bar_chart_rounded,
@@ -59,7 +59,7 @@ class AddProductScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             ElevatedButton(
@@ -71,9 +71,9 @@ class AddProductScreen extends StatelessWidget {
                     name: nameController.text,
                     price: double.parse(priceController.text),
                     inStock: stockController.text == "yes"));
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
               },
-              child: Text(
+              child: const Text(
                 "Add Product",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
